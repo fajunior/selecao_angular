@@ -31,15 +31,6 @@ export class UserCreateComponent implements OnInit {
       const date = new Date(this.user.birthday);
       this.user.birthday = date.toISOString().split('T')[0];
     }
-    console.log(this.user)
-
-    /*
-    this.userService.getUser().subscribe((user)=>{
-      console.log("retornou")
-      console.log(user)
-      this.router.navigate(["/users"])
-    })
-      */
     
     this.userService.create(this.user).subscribe(()=>{
       this.userService.showMessage('Usuario criado!')

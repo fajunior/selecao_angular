@@ -24,11 +24,9 @@ export class UserService {
   }
 
   create(user: User):Observable<User>{
-    console.log(user)
     let headers = new HttpHeaders({
       'Accept': '*/*',
       'Content-Type': 'application/json',
-      //'accept-encoding': 'gzip, deflate, br',
     });
     let options = { headers: headers };
     let params = new HttpParams();
@@ -39,7 +37,6 @@ export class UserService {
       }
     }
 
-    console.log(params)
 
     return this.http.post<User>(this.baseUrl, user, options).pipe(
       map(obj=>obj),

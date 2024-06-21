@@ -12,9 +12,17 @@ export class CarReadComponent implements OnInit {
   constructor(private carService: CarService, private userCarService: UserCarService) { }
 
   ngOnInit(): void {
+    this.userCarService.userData = {
+      firstName: "",
+      lastName: "",
+      email: "",
+      birthday: "2023-01-01",
+      login: "",
+      password: "",
+      phone: "",
+      cars:[]
+  }
     this.carService.read().subscribe(cars => {
-      console.log("carros")
-      console.log(cars)
       this.userCarService.userCarData = cars
     })
   }

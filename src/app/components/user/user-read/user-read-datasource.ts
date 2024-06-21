@@ -22,7 +22,6 @@ export class UserReadDataSource extends DataSource<User> {
     this.userService = userService;
     this.userService.read().subscribe(users =>{
       this.data.next(users);
-      console.log(users)
     })
   }
 

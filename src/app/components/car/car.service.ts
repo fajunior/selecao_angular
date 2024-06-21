@@ -14,7 +14,6 @@ export class CarService {
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
   create(car: Car):Observable<Car>{
-    console.log(car)
     let headers = new HttpHeaders({
       'Accept': '*/*',
       'Content-Type': 'application/json',
@@ -29,7 +28,6 @@ export class CarService {
       }
     }
 */
-    console.log(params)
 
     return this.http.post<Car>(this.baseUrl, car, options).pipe(
       map(obj=>obj),

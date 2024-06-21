@@ -23,7 +23,6 @@ export class CarDeleteComponent implements OnInit {
       this.car = car
       this.carDataService.carData = car
       this.user = this.userCarService.userData
-      console.log(this.user)
     })
   }
   
@@ -32,12 +31,10 @@ export class CarDeleteComponent implements OnInit {
     if (this.user.id > 0) {
       url = `/users/update/${this.user.id}`
     }
-    console.log(url)
    
 
     try {
       const response = await this.carService.delete(this.car.id).toPromise();
-      console.log("delete", response);
     
       this.carDataService.carData = {
         "licensePlate": "",

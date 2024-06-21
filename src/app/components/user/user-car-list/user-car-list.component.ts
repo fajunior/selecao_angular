@@ -8,14 +8,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-car-list.component.css']
 })
 export class UserCarListComponent implements OnInit {
-  /*cars: Car[] = [{
-    "id": 7,
-    "year": 2018,
-    "licensePlate": "PDV-0625",
-    "model": "Audi",
-    "color": "White"
-}]*/
-  
 
   constructor(private userCarService: UserCarService) { }
 
