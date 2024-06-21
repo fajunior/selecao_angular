@@ -1,0 +1,45 @@
+<mat-card>
+    <mat-card-title>Excluir Usuário</mat-card-title>
+
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Primeiro nome" [value]="user.firstName" name="firstname" disabled >
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Último nome"  [value]="user.lastName" name="lastname" disabled >
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="E-mail"  [value]="user.email" name="email" disabled >
+        </mat-form-field>
+        
+        <mat-form-field>
+            <mat-label>Data de aniversário</mat-label>
+            <input matInput [matDatepicker]="picker" [value]="user.birthday" name="birthday" disabled >
+            <mat-hint>DD/MM/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        
+        <mat-form-field>
+            <input matInput placeholder="Login" [value]="user.login" name="login" disabled >
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Senha" [value]="user.password" name="password" disabled >
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Telefone" [value]="user.phone" name="phone" disabled >
+        </mat-form-field>
+        <div class="button-container">
+
+            <button mat-raised-button (click)="deleteUser()" color="warn">
+                Excluir
+            </button>
+            
+            <button mat-raised-button (click)="cancel()">
+                Cancelar
+            </button>
+        </div>
+    </form>
+
+</mat-card>

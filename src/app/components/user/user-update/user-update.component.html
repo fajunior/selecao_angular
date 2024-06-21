@@ -1,0 +1,47 @@
+<mat-card>
+    <mat-card-title>Atualizar Usuário</mat-card-title>
+
+    <form >
+        <mat-form-field>
+            <input matInput placeholder="Primeiro nome" [(ngModel)]="user.firstName" name="firstname">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Último nome"  [(ngModel)]="user.lastName" name="lastname" >
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="E-mail"  [(ngModel)]="user.email" name="email" >
+        </mat-form-field>
+        
+        <mat-form-field>
+            <mat-label>Data de aniversário</mat-label>
+            <input matInput [matDatepicker]="picker" [(ngModel)]="user.birthday" name="birthday">
+            <mat-hint>DD/MM/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        
+        <mat-form-field>
+            <input matInput placeholder="Login" [(ngModel)]="user.login" name="login" >
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Senha" [(ngModel)]="user.password" name="password" >
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Telefone" [(ngModel)]="user.phone" name="phone" >
+        </mat-form-field>
+
+        <app-user-car-list></app-user-car-list>
+        <div class="button-container">
+
+            <button mat-raised-button (click)="updateUser()" color="primary">
+                Salvar
+            </button>
+            
+            <button mat-raised-button (click)="cancel()">
+                Cancelar
+            </button>
+        </div>
+    </form>
+
+</mat-card>

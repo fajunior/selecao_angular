@@ -1,0 +1,16 @@
+<mat-card>
+    <mat-card-title>Novo Carro</mat-card-title>
+    <form>
+        <app-car-fields></app-car-fields>
+        <div class="button-container">
+
+            <button mat-raised-button (click)="createCar()" color="primary">
+                Salvar
+            </button>
+            
+            <button mat-raised-button (click)="cancel()">
+                Cancelar
+            </button>
+        </div>
+    </form>
+</mat-card>
