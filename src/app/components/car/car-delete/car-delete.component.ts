@@ -27,23 +27,18 @@ export class CarDeleteComponent implements OnInit {
   }
   
   async deleteCar() {
-    let url = '/cars'
-    if (this.user.id > 0) {
-      url = `/users/update/${this.user.id}`
-    }
-   
-
+ 
     try {
       const response = await this.carService.delete(this.car.id).toPromise();
     
       this.carDataService.carData = {
         "licensePlate": "",
-        "year": 2018,
+        "year": null,
         "model": "",
         "color": ""
       }
       this.carService.showMessage('Carro excluído com sucesso!')
-      this.router.navigate([url])
+      this.router.navigate([this.getUrl()])
       
     } catch (error) {
         console.error("Error fetching data", error);
@@ -51,7 +46,16 @@ export class CarDeleteComponent implements OnInit {
   }
     
   cancel(): void {
-    this.router.navigate(['/cars'])
+    
+    this.router.navigate([this.getUrl()])
+  }
+
+  getUrl(): string {
+    let url = '/cars'
+    if (this.user.id > 0) {
+      url = `/users/update/${this.user.id}`
+    }
+    return url
   }
 
 }

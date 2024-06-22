@@ -8,23 +8,17 @@ import { Car } from '../car.model';
   styleUrls: ['./car-fields.component.css']
 })
 export class CarFieldsComponent implements OnInit {
-  /*
-  car: Car = {
-    "licensePlate": "",
-    "year": 2018,
-    "model": "",
-    "color": ""
-  }
-  */
+  car: Car
   constructor(private carDataService: CarDataService) { }
 
   ngOnInit(): void {
-    this.carDataService.carData = this.car
+    this.car = this.carDataService.carData
+    //console.log("car: "+this.car)
   }
-
+/*
   get car(): Car {
     return this.carDataService.carData
   }
-
+*/
   
 }

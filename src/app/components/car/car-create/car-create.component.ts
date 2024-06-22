@@ -16,18 +16,18 @@ export class CarCreateComponent implements OnInit {
   
 
   ngOnInit(): void {
-    
+    this.carDataService.carData = {
+      "licensePlate": "",
+      "year": null,
+      "model": "",
+      "color": ""
+    }
   }
 
   createCar(): void {
     this.carService.create(this.car).subscribe(()=>{
       this.carService.showMessage('Carro criado!')
-      this.carDataService.carData = {
-        "licensePlate": "",
-        "year": 2018,
-        "model": "",
-        "color": ""
-      }
+      
       this.router.navigate(["/cars"])
     })
   }

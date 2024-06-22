@@ -1,3 +1,4 @@
+import { JwtRequest } from './jwt-request.module';
 import { User } from './user.module';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -27,6 +28,7 @@ export class UserService {
     let headers = new HttpHeaders({
       'Accept': '*/*',
       'Content-Type': 'application/json',
+      //'accept-encoding': 'gzip, deflate, br',
     });
     let options = { headers: headers };
     let params = new HttpParams();
@@ -43,6 +45,7 @@ export class UserService {
       catchError(e => this.errorHandler(e))
     )
   }
+
 
   read(): Observable<User[]> {
     return this.http.get<User[]>(this.baseUrl).pipe(

@@ -10,6 +10,8 @@ import { UserDeleteComponent } from './components/user/user-delete/user-delete.c
 import { CarCrudComponent } from './views/car-crud/car-crud.component';
 import { CarCreateComponent } from './components/car/car-create/car-create.component';
 import { CarDeleteComponent } from './components/car/car-delete/car-delete.component';
+import { CarUpdateComponent } from './components/car/car-update/car-update.component';
+import { UserSigninComponent } from './components/user/user-signin/user-signin.component';
 
 const routes: Routes = [
   {
@@ -42,6 +44,14 @@ const routes: Routes = [
   {
     path:"cars/delete/:id",
     component: CarDeleteComponent
+  },
+  {
+    path:"cars/update/:id",
+    component: CarUpdateComponent
+  },
+  {
+    path:"users/signin",
+    component: UserSigninComponent
   }
 ];
 

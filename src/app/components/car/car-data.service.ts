@@ -8,7 +8,7 @@ import { Car } from './car.model';
 export class CarDataService {
   private _carData = new BehaviorSubject<Car>({
     "licensePlate": "",
-    "year": 2018,
+    "year": null,
     "model": "",
     "color": ""
   })

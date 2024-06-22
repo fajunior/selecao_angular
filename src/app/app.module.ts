@@ -24,7 +24,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatDatepickerModule } from '@angular/material/datepicker';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { FormsModule } from "@angular/forms";
 import { MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
@@ -40,6 +40,9 @@ import { CarReadComponent } from './components/car/car-read/car-read.component';
 import { CarTableComponent } from './components/car/car-table/car-table.component';
 import { CarCreateComponent } from './components/car/car-create/car-create.component';
 import { CarDeleteComponent } from './components/car/car-delete/car-delete.component';
+import { CarUpdateComponent } from './components/car/car-update/car-update.component';
+import { HttpInterceptorService } from './components/http-interceptor.service';
+import { UserSigninComponent } from './components/user/user-signin/user-signin.component';
 
 
 
@@ -58,12 +61,14 @@ import { CarDeleteComponent } from './components/car/car-delete/car-delete.compo
     UserCarListComponent,
     UserCarAddComponent,
     UserCarAddComponent,
+    UserSigninComponent,
     CarFieldsComponent,
     CarCrudComponent,
     CarReadComponent,
     CarTableComponent,
     CarCreateComponent,
-    CarDeleteComponent
+    CarDeleteComponent,
+    CarUpdateComponent,
   ],
   imports: [
     BrowserModule,
@@ -86,7 +91,8 @@ import { CarDeleteComponent } from './components/car/car-delete/car-delete.compo
     MatTableModule
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
-    { provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS }],
+    { provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS },
+    { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

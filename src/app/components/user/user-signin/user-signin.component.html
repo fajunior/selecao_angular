@@ -1,0 +1,19 @@
+<mat-card>
+    <mat-card-title>Login de Usuário</mat-card-title>
+
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Login" [(ngModel)]="jwtRequest.username" name="login" >
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Senha" [(ngModel)]="jwtRequest.password" name="password" >
+        </mat-form-field>
+        <div class="button-container">
+
+            <button mat-raised-button (click)="signin()" color="primary">
+                Login
+            </button>
+            
+        </div>
+    </form>
+</mat-card>

@@ -17,17 +17,10 @@ export class CarService {
     let headers = new HttpHeaders({
       'Accept': '*/*',
       'Content-Type': 'application/json',
-      //'accept-encoding': 'gzip, deflate, br',
     });
     let options = { headers: headers };
     let params = new HttpParams();
-/*
-    for (const key in car) {
-      if (car.hasOwnProperty(key)) {
-        params = params.append(key, car[key]);
-      }
-    }
-*/
+
 
     return this.http.post<Car>(this.baseUrl, car, options).pipe(
       map(obj=>obj),
@@ -51,7 +44,14 @@ export class CarService {
     )
   }
 
-
+  update(car: Car): Observable<Car> {
+    const url = `${this.baseUrl}/${car.id}`
+    console.log(car)
+    return this.http.put<Car>(url, car).pipe(
+      map(obj=>obj),
+      catchError(e => this.errorHandler(e))
+    )
+  }
 
   delete(id: number): Observable<Car> {
     const url = `${this.baseUrl}/${id}`
