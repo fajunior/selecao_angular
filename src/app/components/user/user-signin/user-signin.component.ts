@@ -2,6 +2,7 @@ import { AuthService } from './../auth.service';
 import { JwtRequest } from './../jwt-request.module';
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-signin',
@@ -13,15 +14,14 @@ export class UserSigninComponent implements OnInit {
     username: "",
     password: ""
 }
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   signin():void{
-    console.log(this.jwtRequest)
     this.authService.signin(this.jwtRequest).subscribe(token => {
-      console.log(token)
+      this.router.navigate(['users/profile']);
     })
   }
 

@@ -20,8 +20,8 @@ export class AuthService {
     console.log(jwtRequest)
     return this.http.post<JwtRequest>(`${this.baseUrl}/authenticate`, jwtRequest).pipe(
       tap(response => {
-        console.log(response.jwtToken)
         localStorage.setItem(this.tokenKey, response.jwtToken);
+        localStorage.setItem("username", jwtRequest.username);
       }),
       catchError(e => this.errorHandler(e))
     )
@@ -34,6 +34,10 @@ export class AuthService {
 
   getToken(): string | null {
     return localStorage.getItem(this.tokenKey);
+  }
+
+  getUsername(): string | null {
+    return localStorage.getItem("username");
   }
 
   isAuthenticated(): boolean {

@@ -24,6 +24,13 @@
                 Carros
             </a>
         </mat-nav-list>
+      
+        <mat-nav-list *ngIf="authService.isAuthenticated()">
+            <a mat-list-item routerLink="users/profile">
+            <i class="material-icons">account_circle</i>
+                Perfil
+            </a>
+        </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content class="content">
         <router-outlet></router-outlet>

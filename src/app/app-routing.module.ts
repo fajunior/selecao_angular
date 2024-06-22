@@ -12,6 +12,7 @@ import { CarCreateComponent } from './components/car/car-create/car-create.compo
 import { CarDeleteComponent } from './components/car/car-delete/car-delete.component';
 import { CarUpdateComponent } from './components/car/car-update/car-update.component';
 import { UserSigninComponent } from './components/user/user-signin/user-signin.component';
+import { UserProfileComponent } from './components/user/user-profile/user-profile.component';
 
 const routes: Routes = [
   {
@@ -52,7 +53,12 @@ const routes: Routes = [
   {
     path:"users/signin",
     component: UserSigninComponent
+  },
+  {
+    path:"users/profile",
+    component: UserProfileComponent
   }
+
 ];
 
 @NgModule({

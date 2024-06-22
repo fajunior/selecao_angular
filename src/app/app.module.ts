@@ -43,6 +43,7 @@ import { CarDeleteComponent } from './components/car/car-delete/car-delete.compo
 import { CarUpdateComponent } from './components/car/car-update/car-update.component';
 import { HttpInterceptorService } from './components/http-interceptor.service';
 import { UserSigninComponent } from './components/user/user-signin/user-signin.component';
+import { UserProfileComponent } from './components/user/user-profile/user-profile.component';
 
 
 
@@ -69,6 +70,7 @@ import { UserSigninComponent } from './components/user/user-signin/user-signin.c
     CarCreateComponent,
     CarDeleteComponent,
     CarUpdateComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,
