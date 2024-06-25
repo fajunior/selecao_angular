@@ -6,7 +6,7 @@
             <input matInput placeholder="Login" [(ngModel)]="jwtRequest.username" name="login" >
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Senha" [(ngModel)]="jwtRequest.password" name="password" >
+            <input matInput placeholder="Senha" [type]="hide ? 'password' : 'text'" [(ngModel)]="jwtRequest.password" name="password" >
         </mat-form-field>
         <div class="button-container">
 

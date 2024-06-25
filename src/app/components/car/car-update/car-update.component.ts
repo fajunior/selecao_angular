@@ -18,7 +18,7 @@ export class CarUpdateComponent implements OnInit {
 
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id')
-    
+    console.log(id)
     this.carService.readById(id).subscribe(car => {
       console.log(car)
       this.car = car

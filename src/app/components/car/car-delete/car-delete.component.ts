@@ -20,6 +20,7 @@ export class CarDeleteComponent implements OnInit {
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id')
     this.carService.readById(id).subscribe(car => {
+      console.log(id)
       this.car = car
       this.carDataService.carData = car
       this.user = this.userCarService.userData
